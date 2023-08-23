@@ -12,16 +12,16 @@
             <ion-title size="large">Blank</ion-title>
         </ion-toolbar>
     </ion-header>
-    <ion-button id="open-custom-dialog" expand="block">Select range date</ion-button>
+    <ion-button id="open-date-picker-dialog" (click)="openDatePicker()" #openPickerButton expand="block">{{selectedText}}</ion-button>
 
-    <ion-modal id="example-modal" #modal trigger="open-custom-dialog">
+    <ion-modal id="example-modal" #modal >
         <ng-template>
             <div class="wrapper">
-                <h1>Dialog header</h1>
+                <h1>Select date</h1>
 
                 <ion-datetime #datetime presentation="date" preferWheel="false" [multiple]="true" [value]="[]"
                     [showDefaultButtons]="false" [(ngModel)]="myDates" (ngModelChange)="dateChanged()"
-                    [highlightedDates]="highlightedDates">
+                    [highlightedDates]="highlightedDates" value="2023-08-23" locale="vi-VN">
 
                 </ion-datetime>
                 <div>
