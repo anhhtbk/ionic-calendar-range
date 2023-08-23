@@ -14,7 +14,7 @@
     </ion-header>
     <ion-button id="open-date-picker-dialog" (click)="openDatePicker()" #openPickerButton expand="block">{{selectedText}}</ion-button>
 
-    <ion-modal id="example-modal" #modal >
+    <ion-modal id="example-modal" #modal backdropDismiss="false">
         <ng-template>
             <div class="wrapper">
                 <h1>Select date</h1>
