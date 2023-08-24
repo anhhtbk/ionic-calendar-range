@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
     <ion-toolbar>
         <ion-title>
-            Blank
+            Date range picker
         </ion-title>
     </ion-toolbar>
 </ion-header>
@@ -9,23 +9,23 @@
 <ion-content [fullscreen]="true">
     <ion-header collapse="condense">
         <ion-toolbar>
-            <ion-title size="large">Blank</ion-title>
+            <ion-title size="large">Date range picker</ion-title>
         </ion-toolbar>
     </ion-header>
     <ion-button id="open-date-picker-dialog" (click)="openDatePicker()" #openPickerButton expand="block">{{selectedText}}</ion-button>
 
-    <ion-modal id="example-modal" #modal backdropDismiss="false">
+    <ion-modal id="example-modal" #datetimeModal backdropDismiss="false">
         <ng-template>
             <div class="wrapper">
                 <h1>Select date</h1>
 
                 <ion-datetime #datetime presentation="date" preferWheel="false" [multiple]="true" [value]="[]"
-                    [showDefaultButtons]="false" [(ngModel)]="myDates" (ngModelChange)="dateChanged()"
+                    [showDefaultButtons]="false" [(ngModel)]="selectedDates" (ngModelChange)="dateChanged()"
                     [highlightedDates]="highlightedDates" value="2023-08-23" locale="vi-VN">
 
                 </ion-datetime>
                 <div>
-                    <ion-buttons slot="buttons">
+                    <ion-buttons >
                         <ion-button color="danger" (click)="reset()">Reset</ion-button>
                         <ion-button color="primary" (click)="cancel()">Cancel</ion-button>
                         <ion-button color="primary" (click)="confirm()">Confirm</ion-button>
